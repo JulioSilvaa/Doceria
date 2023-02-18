@@ -1,16 +1,48 @@
 import styled from "styled-components";
 
-const ContainerImages = styled.div`
-  img {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 100%;
-    object-fit: cover;
-    transform: scale(0.94);
-    transition: all ease 0.5s;
-    cursor: pointer;
-    &:hover {
-      transform: scale(1);
+export const ContainerImages = styled.div`
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+
+  span {
+    display: none;
+    position: absolute;
+  }
+
+  :hover {
+    span {
+      display: block;
     }
   }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+    cursor: pointer;
+    max-width: 100%;
+    max-height: 100%;
+    transform: scale(0.94);
+    transform-origin: center center;
+    &:hover {
+      transform: scale(0.98);
+    }
+  }
+  .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  &:hover .description {
+    opacity: 1;
+  }
 `;
-export default ContainerImages;
