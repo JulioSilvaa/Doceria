@@ -6,7 +6,8 @@ export const ContainerHomePageHero = styled.div`
   background-size: cover;
   object-fit: cover;
   width: 100%;
-  height: 56.25rem;
+  height: 700px;
+  margin-bottom: 60px;
 `;
 
 export const ContainerGridImages = styled.div`
@@ -15,6 +16,8 @@ export const ContainerGridImages = styled.div`
 `;
 
 export const title = styled.h1`
+  position: relative;
   text-align: center;
-  margin: 30px auto;
+  margin: 50px 0 10px 0;
+  font-family: "Dancing Script", sans-serif;
 `;
