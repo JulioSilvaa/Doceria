@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ContainerHeaderItems = styled.div`
-  /* background-color: #c2e2ed; */
   background-color: #f8e0de;
 `;
 
@@ -24,7 +23,7 @@ export const Header = styled.header`
   }
 
   span {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-left: 3.125rem;
     display: none;
   }
