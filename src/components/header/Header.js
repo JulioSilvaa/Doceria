@@ -6,11 +6,22 @@ function Header() {
   return (
     <S.ContainerHeaderItems>
       <S.Header>
-        <S.Image src={logo} alt="" />
-        <h1>
-          <b> Lily Docê</b>
-          <span> sua vida mais doce</span>
-        </h1>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+
+            width: "55%",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <S.Image src={logo} alt="" />
+          <h1>
+            <b> Lily Docê</b>
+            <span> sua vida mais doce</span>
+          </h1>
+        </div>
         <S.Nav>
           <li>Produtos</li>
           <li>Contato</li>
