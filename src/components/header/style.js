@@ -27,6 +27,32 @@ export const Header = styled.header`
     margin-left: 3.125rem;
     display: none;
   }
+
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+
+    h1 {
+      padding-bottom: 20px;
+    }
+  }
+  @media (max-width: 570px) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    h1 {
+      padding-bottom: 20px 0 0 20px;
+      /* margin: 0 0 20px auto; */
+    }
+  }
+
+  @media (max-width: 360px) {
+    h1 {
+      padding-bottom: 20px;
+      font-size: 3rem;
+    }
+  }
 `;
 
 export const Image = styled.img`
@@ -35,6 +61,20 @@ export const Image = styled.img`
   display: block;
   border-radius: 50%;
   object-fit: scale-down;
+
+  @media (max-width: 800px) {
+    max-width: 90px;
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: 570px) {
+    max-width: 90px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+  }
+  @media (max-width: 400px) {
+    display: none;
+  }
 `;
 
 export const Nav = styled.ul`
@@ -54,11 +94,10 @@ export const Nav = styled.ul`
     height: 30px;
     text-align: center;
     cursor: pointer;
-    transition: ease-in-out 0.3s;
-
+    transform: scale(1);
+    transition: all 0.3s ease-out;
     &:hover {
-      background-color: #c2e2ed;
-      border-radius: 8px;
+      transform: scale(1.1);
     }
   }
 `;

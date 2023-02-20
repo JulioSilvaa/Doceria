@@ -1,12 +1,14 @@
 import styled from "styled-components";
-import banner from "../../assets/cupcakes.avif";
+import banner from "../../assets/bolinhooss.png";
 
 export const ContainerHomePageHero = styled.section`
-  background: url(${banner}) center bottom no-repeat;
+  background-image: url(${banner});
+  background-repeat: no-repeat;
+  background-position: right 12% bottom 30%;
   background-size: cover;
   object-fit: cover;
   width: 100%;
-  height: 500px;
+  height: 400px;
   margin-bottom: 60px;
 `;
 
@@ -34,9 +36,4 @@ export const ContainerAboutUs = styled.section`
   p {
     font-size: 1.5rem;
   }
-`;
-
-export const containerFooter = styled.footer`
-  max-width: 100%;
-  background-color: #f8e0de;
 `;
