@@ -27,6 +27,14 @@ export const ContainerImages = styled.div`
     &:hover {
       transform: scale(0.98);
     }
+
+    @media (max-width: 570px) {
+      height: 150px;
+    }
+
+    @media (max-width: 390px) {
+      height: 100px;
+    }
   }
   .description {
     position: absolute;

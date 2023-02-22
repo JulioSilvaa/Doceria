@@ -30,6 +30,12 @@ body{
   object-fit: cover;
 }
 
+@media (max-width: 390px) {
+     .swiper{
+      height: 200px;
+     }
+  }
+
 
 `;
 export default GlobalStyle;

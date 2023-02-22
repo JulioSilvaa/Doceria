@@ -7,22 +7,22 @@ export default function SocialIcons() {
     <StyledSocialIcons>
       <li>
         <a href="https://twitter.com">
-          <FaFacebook />
+          <FaFacebook size={25} />
         </a>
       </li>
       <li>
         <a href="https://facebook.com">
-          <FaInstagram />
+          <FaInstagram size={25} />
         </a>
       </li>
       <li>
         <a href="https://facebook.com">
-          <SiIfood />
+          <SiIfood size={25} />
         </a>
       </li>
       <li>
         <a href="https://facebook.com">
-          <FaWhatsapp />
+          <FaWhatsapp size={27} />
         </a>
       </li>
     </StyledSocialIcons>

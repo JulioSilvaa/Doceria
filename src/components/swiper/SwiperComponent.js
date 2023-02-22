@@ -13,7 +13,6 @@ function SwiperComponent() {
         spaceBetween={30}
         effect={"fade"}
         loop={"true"}
-        navigation={true}
         pagination={{
           clickable: true,
         }}
