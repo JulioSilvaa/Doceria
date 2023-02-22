@@ -9,7 +9,7 @@ function CardIMage() {
 
   const getFotos = async () => {
     setLoading(true);
-    setImages(await Foto.getAllPhotos());
+    setImages(await Foto.getAllPhotosInGaleria());
     setLoading(false);
   };
 

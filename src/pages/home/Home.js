@@ -1,6 +1,7 @@
 import AboutUs from "components/about/AboutUs";
 import CardIMage from "components/cardImage/CardIMage";
 import Footer from "components/footer/Footer";
+import Header from "components/header/Header";
 import SwiperComponent from "components/swiper/SwiperComponent";
 import { ButtonOrderBy } from "styles/ButtonOrderby";
 import Container from "styles/Container";
@@ -9,6 +10,7 @@ import * as S from "./style";
 const Home = () => {
   return (
     <>
+      <Header />
       <S.ContainerHomePageHero />
       <Container>
         <S.title>Novidades da Semana</S.title>
