@@ -23,7 +23,7 @@ export const Header = styled.header`
   }
 
   span {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-left: 3.125rem;
   }
 

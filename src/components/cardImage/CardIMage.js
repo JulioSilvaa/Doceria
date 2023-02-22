@@ -1,83 +1,50 @@
-import bolo1 from "../../assets/blbrigadeiro.jpeg";
-import bolo2 from "../../assets/bltravessa.jpeg";
-import bolo3 from "../../assets/bltravessa1.jpeg";
+import { useEffect, useState } from "react";
+import { PacmanLoader } from "react-spinners";
+import * as Foto from "services/getAllPhotos";
 import { ContainerImages } from "./style";
 
 function CardIMage() {
+  const [loading, setLoading] = useState(false);
+  const [images, setImages] = useState([]);
+
+  const getFotos = async () => {
+    setLoading(true);
+    setImages(await Foto.getAllPhotos());
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getFotos();
+
+    return () => {
+      console.log("Loading");
+    };
+  }, []);
+
+  const photos = images?.map((item) => (
+    <ContainerImages key={item.name}>
+      <div>
+        <img src={item.url} alt={item.name} />
+        <div className="description">
+          <b>{item.name}</b>
+          <p>
+            {item.description} - {item.valor}
+          </p>
+        </div>
+      </div>
+    </ContainerImages>
+  ));
+
   return (
     <>
-      <ContainerImages>
-        <div>
-          <img src={bolo1} alt="" />
-          <div className="description">
-            <b>Bolo de Chocolate</b>
-            <p> bolo de chocolate com amêndoas</p>
-          </div>
+      {loading ? (
+        <div style={{ margin: "0 auto", textAlign: "center" }}>
+          <PacmanLoader color="#36d7b7" />
+          <h4>Carregando ...</h4>
         </div>
-      </ContainerImages>
-      <ContainerImages>
-        <div>
-          <img src={bolo2} alt="" />
-          <div className="description">
-            <b>Bolo de Chocolate</b>
-            <p> bolo de chocolate com amêndoas</p>
-          </div>
-        </div>
-      </ContainerImages>
-      <ContainerImages>
-        <div>
-          <img src={bolo3} alt="" />
-          <div className="description">
-            <b>Bolo de Chocolate</b>
-            <p> bolo de chocolate com amêndoas</p>
-          </div>
-        </div>
-      </ContainerImages>
-      <ContainerImages>
-        <div>
-          <img src={bolo1} alt="" />
-          <div className="description">
-            <b>Bolo de Chocolate</b>
-            <p> bolo de chocolate com amêndoas</p>
-          </div>
-        </div>
-      </ContainerImages>
-      <ContainerImages>
-        <div>
-          <img src={bolo2} alt="" />
-          <div className="description">
-            <b>Bolo de Chocolate</b>
-            <p> bolo de chocolate com amêndoas</p>
-          </div>
-        </div>
-      </ContainerImages>
-      <ContainerImages>
-        <div>
-          <img src={bolo3} alt="" />
-          <div className="description">
-            <b>Bolo de Chocolate</b>
-            <p> bolo de chocolate com amêndoas</p>
-          </div>
-        </div>
-      </ContainerImages>
-      <ContainerImages>
-        <div>
-          <img src={bolo1} alt="" />
-          <div className="description">
-            <b>Bolo de Chocolate</b>
-            <p> bolo de chocolate com amêndoas</p>
-          </div>
-        </div>
-      </ContainerImages>
-      <ContainerImages>
-        <div>
-          <img src={bolo2} alt="" />
-          <div className="description">
-            <b>Bolo de Chocolate</b>
-            <p> bolo de chocolate com amêndoas</p>
-          </div>
-        </div>
-      </ContainerImages>
+      ) : (
+        photos
+      )}
     </>
   );
 }
