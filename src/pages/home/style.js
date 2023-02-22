@@ -8,13 +8,26 @@ export const ContainerHomePageHero = styled.section`
   background-size: cover;
   object-fit: cover;
   width: 100%;
-  height: 400px;
+  height: 630px;
   margin-bottom: 60px;
+
+  @media (max-width: 770px) {
+    height: 350px;
+  }
+  @media (max-width: 570px) {
+    height: 250px;
+  }
+
+  @media (max-width: 390px) {
+    height: 200px;
+  }
+  @media (max-width: 320px) {
+    height: 150px;
+  }
 `;
 
 export const ContainerGridImages = styled.main`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 `;
 
 export const title = styled.h1`

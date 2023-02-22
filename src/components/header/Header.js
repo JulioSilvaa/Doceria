@@ -1,4 +1,5 @@
 import logo from "assets/logo.jpeg";
+import SocialIcons from "components/footer/SocialIcons";
 
 import * as S from "./style";
 
@@ -11,7 +12,7 @@ function Header() {
             display: "flex",
             flexWrap: "wrap",
 
-            width: "55%",
+            width: "53%",
             alignItems: "center",
             justifyContent: "space-between",
           }}
@@ -22,11 +23,8 @@ function Header() {
             <span> sua vida mais doce</span>
           </h1>
         </div>
-        <S.Nav>
-          <li>Produtos</li>
-          <li>Contato</li>
-          <li>WhattsApp</li>
-        </S.Nav>
+
+        <SocialIcons />
       </S.Header>
     </S.ContainerHeaderItems>
   );
