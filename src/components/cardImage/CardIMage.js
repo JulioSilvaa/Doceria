@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { PacmanLoader } from "react-spinners";
 import * as Foto from "services/getAllPhotos";
 import { ContainerImages } from "./style";
 
@@ -39,7 +38,6 @@ function CardIMage() {
     <>
       {loading ? (
         <div style={{ margin: "0 auto", textAlign: "center" }}>
-          <PacmanLoader color="#36d7b7" />
           <h4>Carregando ...</h4>
         </div>
       ) : (
