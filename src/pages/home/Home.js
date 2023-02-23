@@ -5,7 +5,6 @@ import Header from "components/header/Header";
 import SwiperComponent from "components/swiper/SwiperComponent";
 import { ButtonOrderBy } from "styles/ButtonOrderby";
 import Container from "styles/Container";
-import ContainerGridImages from "styles/Containergrid";
 import * as S from "./style";
 const Home = () => {
   return (
@@ -16,9 +15,7 @@ const Home = () => {
         <S.title>Novidades da Semana</S.title>
         <SwiperComponent />
         <S.title>Conheça nossas sobremesas</S.title>
-        <ContainerGridImages>
-          <CardIMage />
-        </ContainerGridImages>
+        <CardIMage />
         <S.ContainerButtonOrderBy>
           <ButtonOrderBy>Faça seu Pedido !</ButtonOrderBy>
         </S.ContainerButtonOrderBy>

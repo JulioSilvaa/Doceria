@@ -28,24 +28,49 @@ function SwiperComponent() {
     </SwiperSlide>
   ));
 
+  if (loading)
+    return (
+      <h2
+        style={{
+          color: "red",
+          textAlign: "center",
+          margin: "20px",
+        }}
+      >
+        Carregando
+      </h2>
+    );
+
   return (
     <>
-      <Swiper
-        spaceBetween={30}
-        effect={"fade"}
-        loop={"true"}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay, EffectFade, Navigation, Pagination]}
-        className="mySwiper"
-      >
-        {photos}
-      </Swiper>
+      {photos.length <= 0 ? (
+        <div
+          style={{
+            color: "red",
+            textAlign: "center",
+            margin: "20px",
+          }}
+        >
+          <h1>Sem imagens no Carrossel</h1>
+        </div>
+      ) : (
+        <Swiper
+          spaceBetween={30}
+          effect={"fade"}
+          loop={"true"}
+          pagination={{
+            clickable: true,
+          }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay, EffectFade, Navigation, Pagination]}
+          className="mySwiper"
+        >
+          {photos}
+        </Swiper>
+      )}
     </>
   );
 }
