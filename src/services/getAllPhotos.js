@@ -1,5 +1,5 @@
 import { getDownloadURL, listAll, ref } from "firebase/storage";
-import storage from "../firebase/firebaseConfig";
+import { storage } from "../firebase/firebaseConfig";
 
 export const getAllPhotosInGaleria = async () => {
   let list = [];

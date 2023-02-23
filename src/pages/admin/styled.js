@@ -14,7 +14,7 @@ export const FormControlImage = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 37.5rem;
-  height: 600px;
+  height: 700px;
   margin: 3.125rem auto;
   padding: 3.125rem;
   font-size: 1.4rem;
@@ -59,12 +59,29 @@ export const ContainerCheckBox = styled.div`
 `;
 
 export const ButtonSendForm = styled.button`
+  max-width: 200px;
   width: 200px;
-  height: 30px;
+  height: 40px;
+  font-size: 1em;
+  font-family: sans-serif;
   padding: 8px 12px;
+  margin: 30px auto;
   border: none;
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
-  background-color: lightseagreen;
+  background-color: #bde9d6;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transform-style: preserve-3d;
+  transition: all 150ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  &:active {
+    position: relative;
+    transform: translate(0, 0.5em);
+    top: 5px;
+    &:hover {
+      box-shadow: none;
+      transform: translate(0, 0.25em);
+    }
+  }
 `;
