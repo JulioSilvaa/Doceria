@@ -1,85 +1,84 @@
-import useForm from "hooks/useForms";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useInsertProducts } from "hooks/useInsertProduct";
+import { useForm } from "react-hook-form";
 import UploadImage from "services/insertPhotos";
+import schema from "utils/validation";
+
 import * as S from "./styled";
 
 function Admin() {
-  const [
-    handleFileUpload,
-    imgURL,
-    progressValue,
-    setFolder,
-    setImgURL,
-    setProgress,
-  ] = UploadImage();
   const { insertProducts } = useInsertProducts("produtos");
 
-  const [form, onChange, clear] = useForm({
-    name: "",
-    price: "",
-    description: "",
-    image: imgURL,
+  const {
+    register,
+    handleSubmit: onSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmitForm = (data) => {
     insertProducts({
-      ...form,
+      ...data,
       // uid: user.uid,
       // createdBy: user.displayName,
       image: imgURL,
     });
-
-    clear();
-    setImgURL("");
-    setProgress("");
   };
+
+  const [handleFileUpload, imgURL, progressValue, setFolder] = UploadImage();
 
   return (
     <>
       <S.Title>Painel do Administrador</S.Title>
-      <S.FormControlImage onSubmit={handleSubmit}>
+      <S.FormControlImage onSubmit={onSubmit(handleSubmitForm)}>
         <label>
           Nome do produto
-          <input
-            type="text"
-            name={"name"}
-            value={form.name}
-            onChange={onChange}
-          />
+          <input type="text" {...register("name", { required: true })} />
+          {errors.name ? (
+            <S.ErrorMessage>{errors.name.message}</S.ErrorMessage>
+          ) : (
+            <span>ex: Nome do produto</span>
+          )}
         </label>
         <label>
           Descrição do produto
-          <input
-            type="text"
-            name={"description"}
-            value={form.description}
-            onChange={onChange}
-          />
+          <input type="text" {...register("description", { required: true })} />
+          {errors.description ? (
+            <S.ErrorMessage>{errors.description.message}</S.ErrorMessage>
+          ) : (
+            <span>ex: Pequena descrição do produto</span>
+          )}
         </label>
         <label>
           Valor do produto
           <input
-            type="number"
-            name={"price"}
-            value={form.price}
-            onChange={onChange}
+            type="text"
+            {...register("price", {
+              required: true,
+            })}
           />
+          {errors.price ? (
+            <S.ErrorMessage>{errors.price.message}</S.ErrorMessage>
+          ) : (
+            <span>ex: 200.90 use ponto para centavos</span>
+          )}
         </label>
         <label>
           Onde o produto será adicionado
           <S.ContainerCheckBox>
             <select
+              required
               onChange={(e) => {
                 setFolder(e.target.value);
               }}
-              name={"folder"}
             >
               <option value="0">Selecione uma opção:</option>
               <option value="galeria">Galeria de Imagens</option>
               <option value="slide">Carrossel de Novidades</option>
             </select>
           </S.ContainerCheckBox>
+          <span>ex: Selecione uma opção, onde o item será adicionado.</span>
         </label>
         <label>
           Selecione a Imagem
@@ -97,6 +96,7 @@ function Admin() {
           )}
           <input
             type="file"
+            required
             onChange={(e) => {
               handleFileUpload(e);
             }}

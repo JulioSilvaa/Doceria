@@ -14,7 +14,7 @@ export const FormControlImage = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 37.5rem;
-  height: 700px;
+  height: 800px;
   margin: 3.125rem auto;
   padding: 3.125rem;
   font-size: 1.4rem;
@@ -41,6 +41,11 @@ export const FormControlImage = styled.form`
     padding: 0;
     display: block;
     /* display: none; */
+  }
+
+  span {
+    font-size: 0.9rem;
+    font-family: sans-serif;
   }
 `;
 
@@ -83,5 +88,16 @@ export const ButtonSendForm = styled.button`
       box-shadow: none;
       transform: translate(0, 0.25em);
     }
+  }
+`;
+
+export const ErrorMessage = styled.p`
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: #bf1650;
+
+  &::before {
+    display: inline;
+    content: "⚠ ";
   }
 `;

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import * as Foto from "services/getAllPhotos";
+import ContainerGridImages from "styles/Containergrid";
 import { ContainerImages } from "./style";
 
 function CardIMage() {
@@ -34,14 +35,33 @@ function CardIMage() {
     </ContainerImages>
   ));
 
+  if (loading)
+    return (
+      <h2
+        style={{
+          color: "red",
+          textAlign: "center",
+          margin: "20px",
+        }}
+      >
+        Carregando
+      </h2>
+    );
+
   return (
     <>
-      {loading ? (
-        <div style={{ margin: "0 auto", textAlign: "center" }}>
-          <h4>Carregando ...</h4>
+      {photos.length <= 0 ? (
+        <div
+          style={{
+            color: "red",
+            textAlign: "center",
+            margin: "20px",
+          }}
+        >
+          <h1>Sem imagens na Galeria</h1>
         </div>
       ) : (
-        photos
+        <ContainerGridImages>{photos}</ContainerGridImages>
       )}
     </>
   );
