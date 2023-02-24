@@ -1,5 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import CardIMage from "components/cardImage/CardIMage";
+import ControlImage from "components/controlImage/ControlImage";
 import { useInsertProducts } from "hooks/useInsertProduct";
 import { useForm } from "react-hook-form";
 import UploadImage from "services/insertPhotos";
@@ -18,16 +18,18 @@ function Admin() {
     resolver: yupResolver(schema),
   });
 
+  const [handleFileUpload, imgURL, progressValue, setFolder, folder] =
+    UploadImage();
+
   const handleSubmitForm = (data) => {
     insertProducts({
       ...data,
       // uid: user.uid,
       // createdBy: user.displayName,
       image: imgURL,
+      folder: folder,
     });
   };
-
-  const [handleFileUpload, imgURL, progressValue, setFolder] = UploadImage();
 
   return (
     <>
@@ -106,8 +108,15 @@ function Admin() {
         <S.ButtonSendForm type="submit">ENVIAR</S.ButtonSendForm>
       </S.FormControlImage>
       <div>
-        <h3>Fotos da galeria</h3>
-        <CardIMage />
+        <h3
+          style={{
+            textAlign: "center",
+            fontSize: "1.5rem",
+          }}
+        >
+          Fotos da galeria
+        </h3>
+        <ControlImage />
       </div>
     </>
   );
