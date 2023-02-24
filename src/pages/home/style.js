@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import banner from "../../assets/bolinhooss.png";
+import banner from "../../assets/bolinhos.png";
 
 export const ContainerHomePageHero = styled.section`
   background-image: url(${banner});
@@ -8,7 +8,7 @@ export const ContainerHomePageHero = styled.section`
   background-size: cover;
   object-fit: cover;
   width: 100%;
-  height: 630px;
+  height: 600px;
   margin-bottom: 60px;
 
   @media (max-width: 770px) {
