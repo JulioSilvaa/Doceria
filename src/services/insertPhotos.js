@@ -40,6 +40,7 @@ function UploadImage() {
     imgURL,
     progressValue,
     setFolder,
+    folder,
     setImgURL,
     setProgress,
   ];
