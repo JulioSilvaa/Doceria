@@ -1,4 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import CardIMage from "components/cardImage/CardIMage";
 import { useInsertProducts } from "hooks/useInsertProduct";
 import { useForm } from "react-hook-form";
 import UploadImage from "services/insertPhotos";
@@ -102,9 +103,12 @@ function Admin() {
             }}
           />
         </label>
-
         <S.ButtonSendForm type="submit">ENVIAR</S.ButtonSendForm>
       </S.FormControlImage>
+      <div>
+        <h3>Fotos da galeria</h3>
+        <CardIMage />
+      </div>
     </>
   );
 }
