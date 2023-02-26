@@ -1,5 +1,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import ControlImage from "components/controlImage/ControlImage";
+import ControlImage from "components/controlImage/ControlImageGallery";
+import ControlImagesSlide from "components/controlImage/ControlImagesSlide";
 import { useInsertProducts } from "hooks/useInsertProduct";
 import { useForm } from "react-hook-form";
 import UploadImage from "services/insertPhotos";
@@ -12,14 +13,23 @@ function Admin() {
 
   const {
     register,
+    reset,
     handleSubmit: onSubmit,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const [handleFileUpload, imgURL, progressValue, setFolder, folder] =
-    UploadImage();
+  const [
+    handleFileUpload,
+    imgURL,
+    progressValue,
+    setFolder,
+    folder,
+    setImgURL,
+    setProgress,
+    loading,
+  ] = UploadImage();
 
   const handleSubmitForm = (data) => {
     insertProducts({
@@ -29,6 +39,11 @@ function Admin() {
       image: imgURL,
       folder: folder,
     });
+
+    setFolder("");
+    setImgURL("");
+    setProgress("");
+    reset();
   };
 
   return (
@@ -89,7 +104,7 @@ function Admin() {
           {imgURL && (
             <img
               style={{
-                width: "30%",
+                width: "40%",
                 padding: "10px",
                 textAlign: "center",
               }}
@@ -98,14 +113,16 @@ function Admin() {
             />
           )}
           <input
-            type="file"
             required
+            type="file"
+            accept=".png,.jpg,.jpeg,"
             onChange={(e) => {
               handleFileUpload(e);
             }}
           />
         </label>
-        <S.ButtonSendForm type="submit">ENVIAR</S.ButtonSendForm>
+        {!loading && <S.ButtonSendForm type="submit">ENVIAR</S.ButtonSendForm>}
+        {loading && <S.ButtonSendForm disabled>AGUARDE...</S.ButtonSendForm>}
       </S.FormControlImage>
       <div>
         <h3
@@ -117,6 +134,15 @@ function Admin() {
           Fotos da galeria
         </h3>
         <ControlImage />
+        <h3
+          style={{
+            textAlign: "center",
+            fontSize: "1.5rem",
+          }}
+        >
+          Fotos do Slide
+        </h3>
+        <ControlImagesSlide />
       </div>
     </>
   );
