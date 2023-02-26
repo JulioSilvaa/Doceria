@@ -6,10 +6,12 @@ function UploadImage() {
   const [imgURL, setImgURL] = useState("");
   const [progressValue, setProgress] = useState("");
   const [folder, setFolder] = useState("galeria");
+  const [loading, setLoading] = useState(false);
 
   const handleFileUpload = (e) => {
     const file = e.target?.files[0];
     if (!file) return;
+    setLoading(true);
 
     if (["image/jpeg", "image/jpg", "image/png"].includes(file.type)) {
       const storageRef = ref(storage, `${folder}/${file.name}`);
@@ -21,6 +23,7 @@ function UploadImage() {
           const progressValue = Math.round(
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100
           );
+
           setProgress(progressValue);
         },
 
@@ -28,6 +31,7 @@ function UploadImage() {
         () => {
           getDownloadURL(uploadProcess.snapshot.ref).then((url) => {
             setImgURL(url);
+            setLoading(false);
           });
         }
       );
@@ -43,6 +47,7 @@ function UploadImage() {
     folder,
     setImgURL,
     setProgress,
+    loading,
   ];
 }
 

@@ -14,7 +14,6 @@ export const FormControlImage = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 37.5rem;
-  height: 800px;
   margin: 3.125rem auto;
   padding: 3.125rem;
   font-size: 1.4rem;

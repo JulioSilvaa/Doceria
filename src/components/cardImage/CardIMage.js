@@ -1,34 +1,27 @@
-import { useEffect, useState } from "react";
-import * as Foto from "services/getAllPhotos";
+import { useFetchDoc } from "hooks/useFetchDoc";
 import ContainerGridImages from "styles/Containergrid";
+import { SelectFolderImage } from "utils/selectFolderInDB";
 import { ContainerImages } from "./style";
 
 function CardIMage() {
-  const [loading, setLoading] = useState(false);
-  const [images, setImages] = useState([]);
+  const { documents, loading } = useFetchDoc("produtos");
 
-  const getFotos = async () => {
-    setLoading(true);
-    setImages(await Foto.getAllPhotosInGaleria());
-    setLoading(false);
-  };
+  const imagesInDb = SelectFolderImage(documents);
 
-  useEffect(() => {
-    getFotos();
-
-    return () => {
-      console.log("Loading");
-    };
-  }, []);
-
-  const photos = images?.map((item) => (
-    <ContainerImages key={item.name}>
+  const photos = imagesInDb?.map((item) => (
+    <ContainerImages key={item.id}>
       <div>
-        <img src={item.url} alt={item.name} />
+        <img src={item.image} alt={item.name} />
         <div className="description">
           <b>{item.name}</b>
           <p>
-            {item.description} - {item.valor}
+            {item.description}
+            <div className="price">
+              {Number(item.price).toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </div>
           </p>
         </div>
       </div>
@@ -50,7 +43,7 @@ function CardIMage() {
 
   return (
     <>
-      {photos.length <= 0 ? (
+      {photos <= 0 || photos === undefined ? (
         <div
           style={{
             color: "red",

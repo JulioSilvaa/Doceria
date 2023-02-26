@@ -41,16 +41,21 @@ export const ContainerImages = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 120px;
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     padding: 10px;
     opacity: 0;
     transition: opacity 0.5s;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   &:hover .description {
     opacity: 1;
+  }
+
+  .price {
+    font-size: 1rem;
+    padding-top: 8px;
   }
 `;

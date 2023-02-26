@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import * as Foto from "services/getAllPhotos";
+import { useFetchDoc } from "hooks/useFetchDoc";
 
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper";
 import "swiper/css";
@@ -7,24 +6,16 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { SelectFolderSlide } from "utils/selectFolderInDB";
 
 function SwiperComponent() {
-  const [loading, setLoading] = useState(false);
-  const [images, setImages] = useState([]);
+  const { documents, loading } = useFetchDoc("produtos");
 
-  const getFotos = async () => {
-    setLoading(true);
-    setImages(await Foto.getAllPhotosInSlide());
-    setLoading(false);
-  };
+  const imagesInDB = SelectFolderSlide(documents);
 
-  useEffect(() => {
-    getFotos();
-  }, []);
-
-  const photos = images?.map((item) => (
-    <SwiperSlide key={item.name}>
-      <img src={item.url} alt={item.name} />
+  const photos = imagesInDB?.map((item) => (
+    <SwiperSlide key={item.id}>
+      <img src={item.image} alt={item.name} />
     </SwiperSlide>
   ));
 
@@ -43,7 +34,7 @@ function SwiperComponent() {
 
   return (
     <>
-      {photos.length <= 0 ? (
+      {photos <= 0 || photos === undefined ? (
         <div
           style={{
             color: "red",
@@ -51,7 +42,7 @@ function SwiperComponent() {
             margin: "20px",
           }}
         >
-          <h1>Sem imagens no Carrossel</h1>
+          <h1>Sem imagens Slide</h1>
         </div>
       ) : (
         <Swiper
