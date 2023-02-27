@@ -1,4 +1,4 @@
-import logo from "assets/logo.jpeg";
+import logo from "assets/logo.webp";
 import SocialIcons from "components/footer/SocialIcons";
 
 import * as S from "./style";
@@ -17,7 +17,7 @@ function Header() {
             justifyContent: "space-between",
           }}
         >
-          <S.Image src={logo} alt="" />
+          <S.Image src={logo} alt="Logo da empresa" />
           <h1>
             <b> Lily Docê</b>
             <span> sua vida mais doce</span>
