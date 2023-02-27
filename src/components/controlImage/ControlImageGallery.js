@@ -1,6 +1,7 @@
 import { useFetchDoc } from "hooks/useFetchDoc";
 import { SelectFolderImage } from "utils/selectFolderInDB";
 import CardImageADM from "./CardImageADM";
+import * as S from "./styled";
 
 function ControlImage() {
   const { documents, loading, error } = useFetchDoc("produtos");
@@ -11,37 +12,14 @@ function ControlImage() {
     <CardImageADM produto={produto} key={produto.id} />
   ));
 
-  if (loading)
-    return (
-      <h2
-        style={{
-          color: "red",
-          textAlign: "center",
-          margin: "20px",
-        }}
-      >
-        Carregando
-      </h2>
-    );
+  if (loading) return <S.SubTitleLoading>Carregando</S.SubTitleLoading>;
 
   return (
     <>
       {error ? (
         error.message
       ) : (
-        <div
-          style={{
-            width: "80%",
-            display: "flex",
-            flexWrap: "wrap",
-            margin: "10px auto",
-            border: "1px solid black",
-            padding: "15px",
-            gap: "8px",
-          }}
-        >
-          {imageGallerySlide}
-        </div>
+        <S.ContainerCard>{imageGallerySlide}</S.ContainerCard>
       )}
     </>
   );

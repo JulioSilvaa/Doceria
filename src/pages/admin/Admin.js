@@ -125,23 +125,9 @@ function Admin() {
         {loading && <S.ButtonSendForm disabled>AGUARDE...</S.ButtonSendForm>}
       </S.FormControlImage>
       <div>
-        <h3
-          style={{
-            textAlign: "center",
-            fontSize: "1.5rem",
-          }}
-        >
-          Fotos da galeria
-        </h3>
+        <S.SubTitleSection>Fotos da galeria</S.SubTitleSection>
         <ControlImage />
-        <h3
-          style={{
-            textAlign: "center",
-            fontSize: "1.5rem",
-          }}
-        >
-          Fotos do Slide
-        </h3>
+        <S.SubTitleSection>Fotos do Slide</S.SubTitleSection>
         <ControlImagesSlide />
       </div>
     </>

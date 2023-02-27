@@ -17,6 +17,7 @@ export const ContainerImages = styled.div`
 
   img {
     width: 100%;
+    height: 200px;
     object-fit: cover;
     transition: all ease 0.5s;
     cursor: pointer;
@@ -41,7 +42,7 @@ export const ContainerImages = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 120px;
+    height: 90px;
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     padding: 10px;
