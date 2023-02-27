@@ -34,6 +34,7 @@ export const Header = styled.header`
 
     h1 {
       padding-bottom: 20px;
+      margin: 0 auto;
     }
   }
   @media (max-width: 570px) {
@@ -43,12 +44,16 @@ export const Header = styled.header`
     h1 {
       padding-bottom: 20px 0 0 20px;
     }
+    span {
+      font-size: 1rem;
+    }
   }
 
   @media (max-width: 390px) {
     h1 {
       padding-bottom: 20px;
       font-size: 3rem;
+      margin: 0 auto;
     }
   }
 
@@ -64,10 +69,9 @@ export const Header = styled.header`
 `;
 
 export const Image = styled.img`
-  max-width: 10%;
-  width: 100px;
-  height: 80px;
-  width: 6.25rem;
+  max-width: 15%;
+  width: 150px;
+  height: 150px;
   display: block;
   border-radius: 50%;
   object-fit: cover;
@@ -75,6 +79,7 @@ export const Image = styled.img`
   @media (max-width: 800px) {
     max-width: 90px;
     padding-bottom: 20px;
+    display: none;
   }
 
   @media (max-width: 570px) {

@@ -16,7 +16,7 @@ body{
 
 .swiper {
   width: 100%;
-  height: 400px;
+  height: 500px;
 }
 .swiper-slide {
   margin-top: 20px;

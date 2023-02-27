@@ -12,7 +12,7 @@ function Header() {
             display: "flex",
             flexWrap: "wrap",
 
-            width: "53%",
+            width: "50%",
             alignItems: "center",
             justifyContent: "space-between",
           }}

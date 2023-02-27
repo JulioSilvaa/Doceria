@@ -1,4 +1,4 @@
-import logo from "assets/logo.jpeg";
+import logo from "assets/logo.webp";
 import * as S from "components/footer/StyleFooter";
 import { GrLocation, GrPhone } from "react-icons/gr";
 import SocialIcons from "./SocialIcons";
@@ -19,7 +19,7 @@ function Footer() {
             <b>Rua: </b> Eva Aparecida da Silva Tavres, 50 - Jd das Palmeiras 2
           </span>
           <span>
-            <b>Cidade: </b> Ibate - SP
+            <b>Cidade: </b> Ibaté - SP
           </span>
           <span>CEP: 14815-000</span>
         </S.Address>

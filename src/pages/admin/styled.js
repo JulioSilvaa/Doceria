@@ -43,8 +43,9 @@ export const FormControlImage = styled.form`
   }
 
   span {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-family: sans-serif;
+    color: #000123;
   }
 `;
 
