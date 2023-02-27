@@ -65,10 +65,12 @@ export const Header = styled.header`
 
 export const Image = styled.img`
   max-width: 10%;
+  width: 100px;
+  height: 80px;
   width: 6.25rem;
   display: block;
   border-radius: 50%;
-  object-fit: scale-down;
+  object-fit: cover;
 
   @media (max-width: 800px) {
     max-width: 90px;

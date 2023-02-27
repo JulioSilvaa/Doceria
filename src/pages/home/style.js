@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import banner from "../../assets/bolinhos.png";
+import banner from "../../assets/bolinhos.webp";
 
 export const ContainerHomePageHero = styled.section`
   background-image: url(${banner});
