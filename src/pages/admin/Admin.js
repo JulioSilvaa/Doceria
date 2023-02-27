@@ -123,6 +123,7 @@ function Admin() {
         </label>
         {!loading && <S.ButtonSendForm type="submit">ENVIAR</S.ButtonSendForm>}
         {loading && <S.ButtonSendForm disabled>AGUARDE...</S.ButtonSendForm>}
+        <span>OBS: utilize somente imagens no formato png ou jpeg</span>
       </S.FormControlImage>
       <div>
         <S.SubTitleSection>Fotos da galeria</S.SubTitleSection>

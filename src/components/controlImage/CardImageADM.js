@@ -6,7 +6,7 @@ function CardImageADM({ produto }) {
 
   return (
     <S.CardImageAdm key={produto.id}>
-      <h3>Nome: {produto.name}</h3>
+      <h3> {produto.name}</h3>
       <img src={produto.image} alt={produto.name} />
       <p> Valor: {produto.price}</p>
       <button onClick={() => deleteProduct(produto.id)}>Excluir</button>

@@ -17,7 +17,7 @@ export const ContainerImages = styled.div`
 
   img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     transition: all ease 0.5s;
     cursor: pointer;
@@ -34,7 +34,7 @@ export const ContainerImages = styled.div`
     }
 
     @media (max-width: 390px) {
-      height: 100px;
+      height: 200px;
     }
   }
   .description {
@@ -42,7 +42,7 @@ export const ContainerImages = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 90px;
+    height: 45%;
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     padding: 10px;

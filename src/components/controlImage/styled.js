@@ -27,7 +27,7 @@ export const CardImageAdm = styled.div`
   background-color: #f8f8ff;
 
   h3 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: bold;
     font-family: sans-serif;
   }
