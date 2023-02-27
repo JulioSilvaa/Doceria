@@ -100,3 +100,8 @@ export const ErrorMessage = styled.p`
     content: "⚠ ";
   }
 `;
+
+export const SubTitleSection = styled.h3`
+  text-align: center;
+  font-size: 1.5rem;
+`;
