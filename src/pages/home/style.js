@@ -7,7 +7,7 @@ export const ContainerHomePageHero = styled.section`
   background-size: cover;
   object-fit: cover;
   width: 100%;
-  height: 600px;
+  height: 500px;
   margin-bottom: 60px;
 
   @media (max-width: 770px) {

@@ -1,19 +1,27 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-// import ButtonForm from "components/formComp/button/Button";
+import { ButtonForm, ButtonHome } from "components/formComp/button/Button";
 import Field from "components/formComp/field/index";
 import Form from "components/formComp/form/index";
+import { useAuthentication } from "hooks/useAuthentication";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { schemaLogin } from "utils/validation";
 
 const FormNew = () => {
+  const { login, loading } = useAuthentication();
+
+  const navigate = useNavigate();
+
   const { register, handleSubmit, reset } = useForm({
     resolver: yupResolver(schemaLogin),
   });
 
   const newUser = (user) => {
-    console.log(user, "clicou");
-
+    login(user);
     reset();
+    if (!loading) {
+      navigate("/admin");
+    }
   };
 
   return (
@@ -31,8 +39,8 @@ const FormNew = () => {
         type={"password"}
         register={{ ...register("password") }}
       />
-      {/* <ButtonForm type="submit">Enviar</ButtonForm> */}
-      <button type="submit">Send</button>
+      <ButtonForm type="submit">Enviar</ButtonForm>
+      <ButtonHome onClick={() => navigate("/")}>Home</ButtonHome>
     </Form>
   );
 };

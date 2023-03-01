@@ -5,7 +5,6 @@ export const schemaProduct = yup
   .shape({
     name: yup.string().required("Campo obrigatório"),
     description: yup.string().required("Campo obrigatório"),
-    email: yup.string().email("E-mail inválido.").required("Campo obrigatório"),
     price: yup
       .string()
       .matches(
