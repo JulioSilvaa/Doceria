@@ -18,6 +18,7 @@ export const useAuthentication = () => {
   const [cancelled, setCancelled] = useState(false);
 
   const auth = getAuth();
+  console.log(auth);
 
   function checkifIsCancelled() {
     if (cancelled) {
@@ -64,11 +65,11 @@ export const useAuthentication = () => {
   //logout - sign Out
 
   const logout = () => {
-    alert("Saindo !");
-
-    checkifIsCancelled();
-
-    signOut(auth);
+    // alert("Saindo !");
+    if (window.confirm("Deseja sair ?")) {
+      checkifIsCancelled();
+      signOut(auth);
+    }
   };
 
   //login - sign In
@@ -82,7 +83,7 @@ export const useAuthentication = () => {
       await signInWithEmailAndPassword(auth, data.email, data.password);
       setLoading(false);
 
-      alert(" Usuário encontrado!");
+      // alert(" Usuário encontrado!");
     } catch (error) {
       let systemErrorMessage;
 

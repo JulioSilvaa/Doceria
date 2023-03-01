@@ -69,8 +69,8 @@ export const Header = styled.header`
 `;
 
 export const Image = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   display: block;
   border-radius: 50%;
   object-fit: cover;

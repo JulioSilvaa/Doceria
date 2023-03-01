@@ -1,15 +1,19 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import ControlImage from "components/controlImage/ControlImageGallery";
 import ControlImagesSlide from "components/controlImage/ControlImagesSlide";
+import { useAuthentication } from "hooks/useAuthentication";
 import { useInsertProducts } from "hooks/useInsertProduct";
 import { useForm } from "react-hook-form";
 import UploadImage from "services/insertPhotos";
 import { schemaProduct } from "utils/validation";
 
+import { useNavigate } from "react-router-dom";
 import * as S from "./styled";
 
 function Admin() {
   const { insertProducts } = useInsertProducts("produtos");
+  const { logout } = useAuthentication();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -34,8 +38,6 @@ function Admin() {
   const handleSubmitForm = (data) => {
     insertProducts({
       ...data,
-      // uid: user.uid,
-      // createdBy: user.displayName,
       image: imgURL,
       folder: folder,
     });
@@ -48,7 +50,13 @@ function Admin() {
 
   return (
     <>
-      <S.Title>Painel do Administrador</S.Title>
+      <S.ContainerHeaderAdmin>
+        <S.Title>Painel do Administrador</S.Title>
+        <S.ContainerButtons>
+          <S.ButtonHome onClick={() => navigate("/")}>Home</S.ButtonHome>
+          <S.ButtonLogout onClick={logout}>Logout</S.ButtonLogout>
+        </S.ContainerButtons>
+      </S.ContainerHeaderAdmin>
       <S.FormControlImage onSubmit={onSubmit(handleSubmitForm)}>
         <label>
           Nome do produto

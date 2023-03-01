@@ -1,11 +1,65 @@
 import styled from "styled-components";
 
 export const Title = styled.h1`
-  background-color: #bde9d6;
   padding: 0.5rem;
   text-align: center;
   font-size: 3rem;
   margin: 0 auto;
+
+  @media (max-width: 390px) {
+    font-size: 1.2rem;
+  }
+`;
+
+export const ContainerHeaderAdmin = styled.div`
+  background-color: #bde9d6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+`;
+
+export const ContainerButtons = styled.div`
+  width: 12.5rem;
+  display: flex;
+  padding: 0 8px;
+  justify-content: space-between;
+`;
+
+export const ButtonLogout = styled.button`
+  max-width: 200px;
+  height: 30px;
+  background-color: #cf0e0e;
+  color: #fff;
+  font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: 300;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-top: 8px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+export const ButtonHome = styled.button`
+  max-width: 200px;
+  height: 30px;
+  background-color: #0000ff;
+  color: #fff;
+  font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: 300;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-top: 8px;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const FormControlImage = styled.form`

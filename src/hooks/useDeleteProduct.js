@@ -37,12 +37,13 @@ function useDeleteProduct(docCollection) {
       type: "LOADING",
     });
     try {
-      const deletedDocument = await deleteDoc(doc(db, docCollection, id));
-
-      checkCancelBeforeDispatch({
-        type: "DELETED_DOC",
-        payload: deletedDocument,
-      });
+      if (window.confirm("Deseja apargar este produto ?")) {
+        const deletedDocument = await deleteDoc(doc(db, docCollection, id));
+        checkCancelBeforeDispatch({
+          type: "DELETED_DOC",
+          payload: deletedDocument,
+        });
+      }
     } catch (error) {
       checkCancelBeforeDispatch({
         type: "ERROR",
