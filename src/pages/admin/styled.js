@@ -25,6 +25,7 @@ export const FormControlImage = styled.form`
   }
 
   input {
+    color: #000;
     height: 30px;
     caret-color: green;
     padding: 0.5rem;
@@ -37,6 +38,7 @@ export const FormControlImage = styled.form`
   }
 
   input[type="file"] {
+    color: #000;
     padding: 0;
     display: block;
     /* display: none; */
@@ -64,6 +66,7 @@ export const ContainerCheckBox = styled.div`
 `;
 
 export const ButtonSendForm = styled.button`
+  color: #000;
   max-width: 200px;
   width: 200px;
   height: 40px;

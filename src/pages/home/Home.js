@@ -17,7 +17,9 @@ const Home = () => {
         <S.title>Conheça nossas sobremesas</S.title>
         <CardIMage />
         <S.ContainerButtonOrderBy>
-          <ButtonOrderBy>Faça seu Pedido !</ButtonOrderBy>
+          <ButtonOrderBy>
+            <a href="https://wa.link/dlp0lc">Faça seu Pedido !</a>
+          </ButtonOrderBy>
         </S.ContainerButtonOrderBy>
         <S.ContainerAboutUs>
           <S.title>Nossa História</S.title>

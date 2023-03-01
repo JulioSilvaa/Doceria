@@ -29,8 +29,11 @@ export const ContainerImages = styled.div`
       transform: scale(0.98);
     }
 
+    @media (max-width: 650px) {
+      height: 200px;
+    }
     @media (max-width: 570px) {
-      height: 150px;
+      height: 200px;
     }
 
     @media (max-width: 390px) {

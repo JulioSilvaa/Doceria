@@ -1,10 +1,11 @@
 import * as yup from "yup";
 
-const schema = yup
+export const schemaProduct = yup
   .object()
   .shape({
     name: yup.string().required("Campo obrigatório"),
     description: yup.string().required("Campo obrigatório"),
+    email: yup.string().email("E-mail inválido.").required("Campo obrigatório"),
     price: yup
       .string()
       .matches(
@@ -15,4 +16,9 @@ const schema = yup
   })
   .required();
 
-export default schema;
+export const schemaLogin = yup
+  .object()
+  .shape({
+    email: yup.string().email("E-mail inválido.").required("Campo obrigatório"),
+  })
+  .required();

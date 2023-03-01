@@ -69,7 +69,6 @@ export const Header = styled.header`
 `;
 
 export const Image = styled.img`
-  max-width: 15%;
   width: 150px;
   height: 150px;
   display: block;
