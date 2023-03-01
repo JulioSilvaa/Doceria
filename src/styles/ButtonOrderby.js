@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ButtonOrderBy = styled.button`
+  color: #000;
   width: 17.75rem;
   max-width: 18.75rem;
   height: 3.75rem;
@@ -23,5 +24,10 @@ export const ButtonOrderBy = styled.button`
       box-shadow: none;
       transform: translate(0, 0.25em);
     }
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
   }
 `;

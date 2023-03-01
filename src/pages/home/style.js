@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import banner from "../../assets/bolinhos.png";
 
 export const ContainerHomePageHero = styled.section`
-  background-image: url(${banner});
+  background-image: url("https://static-images.ifood.com.br/image/upload//capa/a3b2315c-079d-491f-a257-34ecf75349c2/202203281319_bgRT_i@2x.jpg");
   background-repeat: no-repeat;
   background-position: right 12% bottom 30%;
   background-size: cover;

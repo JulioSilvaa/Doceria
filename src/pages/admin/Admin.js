@@ -4,7 +4,7 @@ import ControlImagesSlide from "components/controlImage/ControlImagesSlide";
 import { useInsertProducts } from "hooks/useInsertProduct";
 import { useForm } from "react-hook-form";
 import UploadImage from "services/insertPhotos";
-import schema from "utils/validation";
+import { schemaProduct } from "utils/validation";
 
 import * as S from "./styled";
 
@@ -17,7 +17,7 @@ function Admin() {
     handleSubmit: onSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schemaProduct),
   });
 
   const [

@@ -55,8 +55,8 @@ export const InfoSocialMidia = styled.div`
     margin-bottom: 12px;
   }
 
-  @media (max-width: 800px) {
-    margin-top: 20px;
+  @media (max-width: 970px) {
+    margin: 20px auto;
     align-items: center;
     text-align: center;
   }
@@ -71,8 +71,8 @@ export const Address = styled.div`
     padding: 4px;
   }
 
-  @media (max-width: 800px) {
-    margin-top: 20px;
+  @media (max-width: 900px) {
+    margin: 10px auto;
     align-items: center;
     text-align: center;
   }
@@ -82,12 +82,5 @@ export const Copy = styled.p`
   text-align: center;
   font-size: 1.2rem;
   padding-bottom: 1.5rem;
-
   background-color: #f8e0de;
-
-  @media (max-width: 800px) {
-    padding-top: 10px;
-    align-items: center;
-    text-align: center;
-  }
 `;
