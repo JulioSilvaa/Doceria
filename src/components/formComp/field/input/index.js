@@ -6,7 +6,7 @@ const Input = styled.input`
   font-size: 1rem;
   font-family: sans-serif;
   outline: 0;
-  border: none;
+  border: 1px solid #000;
 `;
 
 export default Input;

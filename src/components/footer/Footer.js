@@ -16,7 +16,8 @@ function Footer() {
             <h2>Localização</h2>
           </S.InfoFooter>
           <span>
-            <b>Rua: </b> Eva Aparecida da Silva Tavres, 50 - Jd das Palmeiras 2
+            <b>Rua: </b> Rua: Eva Aparecida da Silva Tavares, 50 - Jd das
+            Palmeiras 2
           </span>
           <span>
             <b>Cidade: </b> Ibaté - SP
@@ -30,7 +31,7 @@ function Footer() {
               <h2>Contato</h2>
             </S.InfoFooter>
             <li>
-              <b>Telefone: </b> +55 - 99 9999-9999
+              <b>Telefone: </b> +55 16 99645-6004
             </li>
             <li>
               <b>email: </b> example@dadadad.com
