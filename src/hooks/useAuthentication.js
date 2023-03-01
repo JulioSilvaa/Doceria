@@ -51,7 +51,7 @@ export const useAuthentication = () => {
       let systemErrorMessage;
 
       if (error.message.includes("Password ")) {
-        alert(" A senha precisa conter no minímo 6 caracteres");
+        alert(" A senha precisa conter no mínimo 6 caracteres");
       } else if (error.message.includes("email-already")) {
         alert("  E-mail já cadastrado");
       } else {

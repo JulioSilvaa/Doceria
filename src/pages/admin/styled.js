@@ -23,6 +23,11 @@ export const ContainerButtons = styled.div`
   display: flex;
   padding: 0 8px;
   justify-content: space-between;
+
+  @media (max-width: 390px) {
+    margin: 0 auto;
+    padding-bottom: 8px;
+  }
 `;
 
 export const ButtonLogout = styled.button`
