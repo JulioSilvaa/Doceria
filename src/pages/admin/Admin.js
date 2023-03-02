@@ -3,17 +3,25 @@ import ControlImage from "components/controlImage/ControlImageGallery";
 import ControlImagesSlide from "components/controlImage/ControlImagesSlide";
 import { useAuthentication } from "hooks/useAuthentication";
 import { useInsertProducts } from "hooks/useInsertProduct";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import UploadImage from "services/insertPhotos";
 import { schemaProduct } from "utils/validation";
 
+import Modal from "components/modal";
 import { useNavigate } from "react-router-dom";
+import {
+  ButtonConfirm,
+  ButtonNotConfirm,
+  ContainerButtonsModal,
+} from "styles/ButtonsModal";
 import * as S from "./styled";
 
 function Admin() {
   const { insertProducts } = useInsertProducts("produtos");
   const { logout } = useAuthentication();
   const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const {
     register,
@@ -54,9 +62,28 @@ function Admin() {
         <S.Title>Painel do Administrador</S.Title>
         <S.ContainerButtons>
           <S.ButtonHome onClick={() => navigate("/")}>Home</S.ButtonHome>
-          <S.ButtonLogout onClick={logout}>Logout</S.ButtonLogout>
+          <S.ButtonLogout
+            onClick={() => {
+              setModalOpen(true);
+            }}
+          >
+            Logout
+          </S.ButtonLogout>
         </S.ContainerButtons>
       </S.ContainerHeaderAdmin>
+      <Modal isOpen={modalOpen} isClose={setModalOpen}>
+        <h4>Deseja realmente sair ?</h4>
+        <ContainerButtonsModal>
+          <ButtonConfirm onClick={logout}>Sim</ButtonConfirm>
+          <ButtonNotConfirm
+            onClick={() => {
+              setModalOpen(false);
+            }}
+          >
+            Não
+          </ButtonNotConfirm>
+        </ContainerButtonsModal>
+      </Modal>
       <S.FormControlImage onSubmit={onSubmit(handleSubmitForm)}>
         <label>
           Nome do produto
@@ -69,7 +96,7 @@ function Admin() {
         </label>
         <label>
           Descrição do produto
-          <input type="text" {...register("description", { required: true })} />
+          <input type="text" {...register("description")} />
           {errors.description ? (
             <S.ErrorMessage>{errors.description.message}</S.ErrorMessage>
           ) : (
@@ -78,12 +105,7 @@ function Admin() {
         </label>
         <label>
           Valor do produto
-          <input
-            type="text"
-            {...register("price", {
-              required: true,
-            })}
-          />
+          <input type="text" {...register("price")} />
           {errors.price ? (
             <S.ErrorMessage>{errors.price.message}</S.ErrorMessage>
           ) : (
@@ -130,7 +152,7 @@ function Admin() {
           />
         </label>
         {!loading && <S.ButtonSendForm type="submit">ENVIAR</S.ButtonSendForm>}
-        {loading && <S.ButtonSendForm disabled>AGUARDE...</S.ButtonSendForm>}
+        {loading && <S.ButtonSendForm>AGUARDE...</S.ButtonSendForm>}
         <span>OBS: utilize somente imagens no formato png ou jpeg</span>
       </S.FormControlImage>
       <div>

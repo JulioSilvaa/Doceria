@@ -4,6 +4,7 @@ export const StyledFooter = styled.footer`
   margin-top: 30px;
   max-width: 100%;
   background-color: #f8e0de;
+  font-size: 1.2rem;
   color: #000;
   padding: 20px 40px;
   display: flex;

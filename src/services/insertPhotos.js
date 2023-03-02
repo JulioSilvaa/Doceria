@@ -1,5 +1,6 @@
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { storage } from "../firebase/firebaseConfig";
 
 function UploadImage() {
@@ -14,6 +15,7 @@ function UploadImage() {
     setLoading(true);
 
     if (["image/jpeg", "image/jpg", "image/png"].includes(file.type)) {
+      toast.info("Aguarde carregar a imagem");
       const storageRef = ref(storage, `${folder}/${file.name}`);
       const uploadProcess = uploadBytesResumable(storageRef, file);
 
@@ -36,7 +38,7 @@ function UploadImage() {
         }
       );
     } else {
-      throw new Error("O carregamento falhou, tipo de arquivo não");
+      toast.error("O carregamento falhou, tipo de arquivo não");
     }
   };
   return [
