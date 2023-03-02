@@ -1,5 +1,6 @@
 import { deleteDoc, doc } from "firebase/firestore";
 import { useEffect, useReducer, useState } from "react";
+import { toast } from "react-toastify";
 import { db } from "../firebase/firebaseConfig";
 
 const initialState = {
@@ -37,13 +38,12 @@ function useDeleteProduct(docCollection) {
       type: "LOADING",
     });
     try {
-      if (window.confirm("Deseja apargar este produto ?")) {
-        const deletedDocument = await deleteDoc(doc(db, docCollection, id));
-        checkCancelBeforeDispatch({
-          type: "DELETED_DOC",
-          payload: deletedDocument,
-        });
-      }
+      const deletedDocument = await deleteDoc(doc(db, docCollection, id));
+      toast.info("Deletado com sucesso!");
+      checkCancelBeforeDispatch({
+        type: "DELETED_DOC",
+        payload: deletedDocument,
+      });
     } catch (error) {
       checkCancelBeforeDispatch({
         type: "ERROR",

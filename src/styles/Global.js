@@ -6,11 +6,12 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Dancing Script', sans-serif;
+  /* font-family: 'Dancing Script', sans-serif; */
 }
 
 body{
   width: 100%;
+  font-family: 'Dancing Script', sans-serif;
 
 }
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ButtonOrderBy = styled.button`
+  font-family: "Dancing Script", sans-serif;
   color: #000;
   width: 17.75rem;
   max-width: 18.75rem;

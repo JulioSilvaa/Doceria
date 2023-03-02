@@ -100,7 +100,6 @@ export const FormControlImage = styled.form`
     color: #000;
     padding: 0;
     display: block;
-    /* display: none; */
   }
 
   span {
@@ -119,6 +118,8 @@ export const ContainerDownloadImage = styled.div`
 
 export const ContainerCheckBox = styled.div`
   select {
+    font-family: "Dancing Script", sans-serif;
+    color: #000;
     font-size: 1.3rem;
     padding: 4px;
   }

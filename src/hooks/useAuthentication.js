@@ -1,13 +1,9 @@
-import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  signInWithEmailAndPassword,
-  signOut,
-  updateProfile,
-} from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 //hooks
 import { useEffect, useState } from "react";
+
+import { toast } from "react-toastify";
 
 export const useAuthentication = () => {
   const [error, setError] = useState(null);
@@ -18,81 +14,41 @@ export const useAuthentication = () => {
   const [cancelled, setCancelled] = useState(false);
 
   const auth = getAuth();
-  console.log(auth);
 
-  function checkifIsCancelled() {
+  function checkedIsCancelled() {
     if (cancelled) {
       return;
     }
   }
 
-  //register
-  const createUser = async (data) => {
-    checkifIsCancelled();
-
-    setLoading(true);
-    setError(null);
-
-    try {
-      const { user } = await createUserWithEmailAndPassword(
-        auth,
-        data.email,
-        data.password
-      );
-
-      await updateProfile(user, { displayName: data.displayName });
-
-      setLoading(false);
-
-      alert("Cadastrado com sucesso!");
-
-      return user;
-    } catch (error) {
-      let systemErrorMessage;
-
-      if (error.message.includes("Password ")) {
-        alert(" A senha precisa conter no mínimo 6 caracteres");
-      } else if (error.message.includes("email-already")) {
-        alert("  E-mail já cadastrado");
-      } else {
-        alert("Ocorreu um erro tente mais tarde");
-      }
-      setLoading(false);
-      setError(systemErrorMessage);
-    }
-  };
-
   //logout - sign Out
 
   const logout = () => {
-    // alert("Saindo !");
-    if (window.confirm("Deseja sair ?")) {
-      checkifIsCancelled();
-      signOut(auth);
-    }
+    toast.info("Desconectado!");
+    checkedIsCancelled();
+    signOut(auth);
   };
 
   //login - sign In
 
   const login = async (data) => {
-    checkifIsCancelled();
+    checkedIsCancelled();
     setLoading(true);
     setError("");
 
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
+      toast.success("Usuário identificado!");
       setLoading(false);
-
-      // alert(" Usuário encontrado!");
     } catch (error) {
       let systemErrorMessage;
 
       if (error.message.includes("user-not-found")) {
-        alert("Usuário não encontrado");
+        toast.error("Usuário não identificado!");
       } else if (error.message.includes("wrong-password")) {
-        alert("A senha incorreta");
+        toast.error("A senha incorreta");
       } else {
-        alert("Ocorreu um Erro, por favor tente novamente mais tarde");
+        toast.error("Ocorreu um Erro, por favor tente novamente mais tarde");
       }
       setError(systemErrorMessage);
       setLoading(false);
@@ -103,5 +59,5 @@ export const useAuthentication = () => {
     return () => setCancelled(true);
   }, []);
 
-  return { auth, createUser, error, loading, logout, login };
+  return { auth, error, loading, logout, login };
 };

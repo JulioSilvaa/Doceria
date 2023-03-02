@@ -34,7 +34,7 @@ function Footer() {
               <b>Telefone: </b> +55 16 99645-6004
             </li>
             <li>
-              <b>email: </b> example@dadadad.com
+              <b>Email: </b> lilan_sal@hotmail.com
             </li>
           </ul>
         </S.Address>
