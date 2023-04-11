@@ -1,6 +1,6 @@
 # Doceria 
 
-O projeto ** Doceria ** foi desenvolvido com o intuito de ajudar um amigo que vende doces caseiros, pensando e ajudar na divulgação de produtos novos e na hora de oferecer seus produtos.
+O projeto ** Doceria ** foi desenvolvido com o intuito de ajudar um amigo que vende doces caseiros, pensando em ajudar na divulgação de produtos novos e na hora de oferecer seus produtos.
 
 
 # Imagens do Projeto
