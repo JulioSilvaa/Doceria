@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Doceria 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O projeto ** Doceria ** foi desenvolvido com o intuito de ajudar um amigo que vende doces caseiros, pensando e ajudar na divulgação de produtos novos e na hora de oferecer seus produtos.
 
-## Available Scripts
 
-In the project directory, you can run:
+# Imagens do Projeto
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Captura de tela 2023-04-11 123833](https://user-images.githubusercontent.com/69260762/231217657-7cad3f10-23db-4127-b27e-d35b833aa2d0.png)
+![Captura de tela 2023-04-11 123933](https://user-images.githubusercontent.com/69260762/231217661-5ef4254f-642d-4e78-843a-a75b445ff183.png)
+![Captura de tela 2023-04-11 123956](https://user-images.githubusercontent.com/69260762/231217663-7606ecc5-ec92-49f7-b9ce-b9fee9ef340b.png)
+![Captura de tela 2023-04-11 124013](https://user-images.githubusercontent.com/69260762/231217667-0766d19d-04e5-4d5d-ac9c-bd9bd250597e.png)
+![Captura de tela 2023-04-11 124405](https://user-images.githubusercontent.com/69260762/231217651-9b053672-7962-41d6-94ad-ff89d584f12f.png)
+![Captura de tela 2023-04-11 124027](https://user-images.githubusercontent.com/69260762/231217669-c6bd34c9-0ee0-4ad3-b120-0f42ad739165.png)
+![Captura de tela 2023-04-11 124258](https://user-images.githubusercontent.com/69260762/231217672-3edf3a88-f81f-4df0-bbd8-5ad8be07e7bc.png)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Índice
 
-### `npm run eject`
+- [Descrição](#-descrição-do-projeto)
+- [Como acessar o projeto](#-como-acessar-o-projeto)
+- [Tecnologias utilizadas](#-tecnologias-utilizadas)
+- [Instalação](#-como-baixar-o-projeto)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🖋 Descrição do projeto
+O projeto consiste em uma página simples onde o usuário pode adicionar na galeria todos os seus produtos, com um breve descrição e a precificação dos mesmos, e ainda possui uma lista rotativa onde poderá ser adicionado os produtos em lançamento e ou em destaques.
+Nesse projeto também foi adicionado uma página do adminnistrador onde o próprio usuário pode adicionar ou remover os produtos na melhor forma.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🌎 Como acessar o projeto
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Link para o projeto na web](https://testelilydocev2.surge.sh/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## 🚀 Tecnologias utilizadas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+o projeto foi desenvolvido usando as seguintes tecnologias:
 
-### Analyzing the Bundle Size
+- [React.js](https://pt-br.reactjs.org/docs/getting-started.html)
+- [StyledComponents](https://styled-components.com/docs)
+- [React-Router-Dom](https://v5.reactrouter.com/web/guides/quick-start)
+- [Firebase](https://firebase.google.com/?hl=pt-br)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 💾 Como baixar o projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Primeiro instale o [Git](https://git-scm.com/), [Node.jS](https://nodejs.org/pt-br/download/) + [npm](https://www.npmjs.com/get-npm)
 
-### Deployment
+```bash
+# Clonar o repositório
+git clone https://github.com/JulioSilvaa/Doceria
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Entrar no diretório
+cd mypage
 
-### `npm run build` fails to minify
+# Instalar as dependências
+npm install  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Rodar o projeto
+npm run start
+```
+
+Feito com muito empenho e dedicação por - Julio Silva  
